@@ -1,32 +1,24 @@
-import org.jetbrains.kotlin.gradle.tasks.*
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 val ideaActive = System.getProperty("idea.active") == "true"
 
-val kotlin_version: String by extra
-val ktor_version: String by extra
-val coroutines_version: String by extra
-val serialization_version: String by extra
-val android_mapbox: String by project
-
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-//    id("kotlinx-serialization")
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(29)
     buildToolsVersion = "29.0.2"
     defaultConfig {
         minSdkVersion(16)
-        targetSdkVersion(28)
+        targetSdkVersion(29)
     }
 }
 
 kotlin {
     //select iOS target platform depending on the Xcode environment variables
-    val iOSTarget: (String, org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget.() -> Unit) -> org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget =
+    val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
         if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true)
             ::iosArm64
         else

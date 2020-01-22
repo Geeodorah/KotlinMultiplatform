@@ -5,7 +5,7 @@
 5    <uses-sdk
 6        android:minSdkVersion="16"
 6-->/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/src/main/AndroidManifest.xml
-7        android:targetSdkVersion="28" />
+7        android:targetSdkVersion="29" />
 7-->/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/src/main/AndroidManifest.xml
 8
 9</manifest>
