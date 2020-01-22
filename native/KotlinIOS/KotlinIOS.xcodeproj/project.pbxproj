@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5544132223D845590097B7CF /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC71C623D5FE7400ED57EB /* SharedCode.framework */; };
+		5544132323D845590097B7CF /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC71C623D5FE7400ED57EB /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55CC71A923D5F5FD00ED57EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CC71A823D5F5FD00ED57EB /* AppDelegate.swift */; };
 		55CC71AB23D5F5FD00ED57EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CC71AA23D5F5FD00ED57EB /* SceneDelegate.swift */; };
 		55CC71AD23D5F5FD00ED57EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CC71AC23D5F5FD00ED57EB /* ContentView.swift */; };
 		55CC71AF23D5F60000ED57EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CC71AE23D5F60000ED57EB /* Assets.xcassets */; };
 		55CC71B223D5F60000ED57EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CC71B123D5F60000ED57EB /* Preview Assets.xcassets */; };
 		55CC71B523D5F60000ED57EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CC71B323D5F60000ED57EB /* LaunchScreen.storyboard */; };
-		55CC71C723D5FE7400ED57EB /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC71C623D5FE7400ED57EB /* SharedCode.framework */; };
-		55CC71C823D5FE7400ED57EB /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC71C623D5FE7400ED57EB /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		55CC71C923D5FE7400ED57EB /* Embed Frameworks */ = {
+		5544132423D845590097B7CF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55CC71C823D5FE7400ED57EB /* SharedCode.framework in Embed Frameworks */,
+				5544132323D845590097B7CF /* SharedCode.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,6 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		55BD705423D7A15A00D891DA /* fat-framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "fat-framework"; path = "../../SharedCode/build/fat-framework"; sourceTree = "<group>"; };
+		55BD705523D7A17400D891DA /* KotlinConfAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KotlinConfAPI.framework; path = "../../SharedCode/build/fat-framework/KotlinConfAPI.framework"; sourceTree = "<group>"; };
 		55CC71A523D5F5FD00ED57EB /* KotlinIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotlinIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CC71A823D5F5FD00ED57EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55CC71AA23D5F5FD00ED57EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55CC71C723D5FE7400ED57EB /* SharedCode.framework in Frameworks */,
+				5544132223D845590097B7CF /* SharedCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,8 @@
 		55CC71BC23D5F8B400ED57EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55BD705523D7A17400D891DA /* KotlinConfAPI.framework */,
+				55BD705423D7A15A00D891DA /* fat-framework */,
 				55CC71C623D5FE7400ED57EB /* SharedCode.framework */,
 				55CC71C223D5FB8700ED57EB /* xcode-frameworks */,
 				55CC71BD23D5F8B400ED57EB /* SharedCode.framework */,
@@ -117,7 +121,7 @@
 				55CC71A223D5F5FD00ED57EB /* Frameworks */,
 				55CC71A323D5F5FD00ED57EB /* Resources */,
 				55CC71C123D5F98000ED57EB /* Run Script */,
-				55CC71C923D5FE7400ED57EB /* Embed Frameworks */,
+				5544132423D845590097B7CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,7 +227,7 @@
 		55CC71B723D5F60000ED57EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -256,6 +260,12 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"../../SharedCode/build/xcode-framework/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework",
+					"../../SharedCode/build/xcode-framework",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -283,7 +293,7 @@
 		55CC71B823D5F60000ED57EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -316,6 +326,12 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"../../SharedCode/build/xcode-framework/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework",
+					"../../SharedCode/build/xcode-framework",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -344,10 +360,10 @@
 				DEVELOPMENT_TEAM = 38KHM3587M;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"../../../MPPOC/SharedCode/build/xcode-frameworks",
-					"../../../MPPOC/SharedCode/build/xcode-frameworks//SharedCode.framework",
-					"Users/bennybrugman/Developer/MPPOC/SharedCode/build/xcode-frameworks",
-					"Users/bennybrugman/Developer/MPPOC/SharedCode/build/xcode-frameworks/SharedCode.framework",
+					"../../SharedCode/build/xcode-frameworks/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework",
+					"../../SharedCode/build/xcode-frameworks",
 				);
 				INFOPLIST_FILE = KotlinIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -371,10 +387,10 @@
 				DEVELOPMENT_TEAM = 38KHM3587M;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"../../../MPPOC/SharedCode/build/xcode-frameworks",
-					"../../../MPPOC/SharedCode/build/xcode-frameworks//SharedCode.framework",
-					"Users/bennybrugman/Developer/MPPOC/SharedCode/build/xcode-frameworks",
-					"Users/bennybrugman/Developer/MPPOC/SharedCode/build/xcode-frameworks/SharedCode.framework",
+					"../../SharedCode/build/xcode-frameworks/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework/SharedCode.framework",
+					"/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC/SharedCode/build/xcode-framework",
+					"../../SharedCode/build/xcode-frameworks",
 				);
 				INFOPLIST_FILE = KotlinIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
