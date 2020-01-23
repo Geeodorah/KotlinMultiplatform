@@ -7,3 +7,10 @@ actual fun platformName(): String {
             " " +
             UIDevice.currentDevice.systemVersion
 }
+
+actual fun test(magic: Int): String{
+    if(magic == 1){
+        return "this is an elite iOS message"
+    }
+    return "this is an iOS message"
+}

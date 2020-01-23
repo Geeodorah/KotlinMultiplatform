@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 /SharedCode/build/kotlin/compileKotlinAndroid/caches-jvm/*
+/SharedCode/build/*
