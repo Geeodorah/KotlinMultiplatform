@@ -3,7 +3,6 @@ package com.jetbrains.handson.mpp.mobile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Switch
 import android.widget.TextView
 
@@ -20,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         messageView.text = createApplicationScreenMessage()
         val messageSwitch = findViewById<Switch>(R.id.message_switch)
 
-        messageSwitch?.setOnCheckedChangeListener { _, isChecked ->
-            showScreenMessage(isChecked, messageView)
+        messageSwitch?.setOnCheckedChangeListener { _, isToggled ->
+            isMessageToggled(isToggled, messageView)
         }
     }
 }

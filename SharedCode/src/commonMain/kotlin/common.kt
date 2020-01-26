@@ -2,7 +2,9 @@ package com.jetbrains.handson.mpp.mobile
 
 expect fun platformName(): String
 expect fun test(magic: Int): String
-var isShowScreenMessage = false
+expect fun showScreenMessage(switchMessage: Any)
+expect fun hideScreenMessage(switchMessage: Any)
+
 
 fun createApplicationScreenMessage() : String {
     return "Kotlin Rocks on ${platformName()}"
@@ -16,10 +18,11 @@ fun commonTesting() : String{
     return "commonTest"
 }
 
-fun showScreenMessage(): Boolean{
-    return isShowScreenMessage
+fun isMessageToggled(messageToggled: Boolean, switchMessage: Any) {
+    if (messageToggled){
+        showScreenMessage(switchMessage)
+    } else {
+        hideScreenMessage(switchMessage)
+    }
 }
 
-fun toggleScreenMessage(isChecked: Boolean){
-    isShowScreenMessage = isChecked
-}

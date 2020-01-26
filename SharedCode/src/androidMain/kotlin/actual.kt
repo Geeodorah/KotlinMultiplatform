@@ -2,6 +2,7 @@ package com.jetbrains.handson.mpp.mobile
 
 import android.os.Build
 import android.view.View
+import android.widget.Switch
 import android.widget.TextView
 
 actual fun platformName(): String {
@@ -16,10 +17,14 @@ actual fun test(magic: Int): String {
     return "this is an Android message"
 }
 
-fun showScreenMessage(isShowing : Boolean, messageView: TextView){
-    if (isShowing){
-        messageView.visibility = View.VISIBLE}
-    else{
-        messageView.visibility = View.INVISIBLE
+actual fun showScreenMessage(switchMessage: Any){
+    if (switchMessage is TextView) {
+        switchMessage.visibility = View.VISIBLE
+    }
+}
+
+actual fun hideScreenMessage(switchMessage: Any){
+    if (switchMessage is TextView) {
+        switchMessage.visibility = View.INVISIBLE
     }
 }

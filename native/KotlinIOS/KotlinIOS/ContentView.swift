@@ -7,17 +7,31 @@
 //
 
 import SwiftUI
-
 import SharedCode
 
 struct ContentView: View {
-    var body: some View {
-        Text(CommonKt.createApplicationScreenMessage())
-    }
-}
+    typealias Body = <#type#>
+    
+//    var body: some View {
+//        Text(CommonKt.createApplicationScreenMessage())
+//    }
+//}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+//struct ContentViewTest: View {
+//    var body: some View {
+//        Text(CommonKt.testing(magic: 1))
+//    }
+//
+//}
+
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+//
+//struct ContentView_PreviewsTest: PreviewProvider {
+//    static var previews: some View {
+//        ContentViewTest()
+//    }
 }
