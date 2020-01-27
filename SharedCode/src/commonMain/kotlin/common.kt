@@ -1,21 +1,23 @@
 package com.jetbrains.handson.mpp.mobile
 
-expect fun platformName(): String
-expect fun getConditionalText(magic: Int): String
-expect fun showScreenMessage(switchMessage: Any)
-expect fun hideScreenMessage(switchMessage: Any)
-expect fun changeSwitchMessage(switchMessage: Any)
-expect fun disableSwitch(switchComponent: Any)
 
+
+expect fun platformName(): String
 var toggleCounter = 0
+
 lateinit var switchComponent : Any
+var message = "Kotlin Rocks on ${platformName()}"
 
 fun createApplicationScreenMessage() : String {
-    return "Kotlin Rocks on ${platformName()}"
+    return message
 }
 
 fun setConditionalText(magic: Int) : String{
-    return getConditionalText(magic)
+    return when (magic) {
+        1 -> return "this is an elite message"
+        2 -> return "this is a normal message"
+        else -> "what are you doing"
+    }
 }
 
 fun commonTesting() : String{
@@ -26,17 +28,20 @@ fun registerSwitch(switchObject: Any){
     switchComponent = switchObject
 }
 
-fun isMessageToggled(messageToggled: Boolean, switchMessage: Any) {
+fun isMessageToggled(): Boolean {
     toggleCounter += 1
-    if (toggleCounter > 3 && ::switchComponent.isInitialized){
-        disableSwitch(switchComponent)
-        changeSwitchMessage(switchMessage)
-    } else {
-        if (messageToggled){
-            showScreenMessage(switchMessage)
-        } else {
-            hideScreenMessage(switchMessage)
-        }
+    if (toggleCounter == 5) {
+        message = "Staph fiddling with me toggle lad"
     }
+    return (toggleCounter < 5)
+}
+
+fun getButtonText(): String{
+    return "reset"
+}
+
+fun resetCounter(){
+    toggleCounter = 0
+    message = "Relax okay"
 }
 

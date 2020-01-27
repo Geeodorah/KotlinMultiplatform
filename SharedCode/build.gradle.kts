@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import java.util.regex.Pattern.compile
 
 val ideaActive = System.getProperty("idea.active") == "true"
 
@@ -8,11 +9,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(28)
     buildToolsVersion = "29.0.2"
     defaultConfig {
         minSdkVersion(16)
-        targetSdkVersion(29)
+        targetSdkVersion(28)
     }
 }
 
@@ -38,15 +39,18 @@ kotlin {
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+        api("com.android.support:support-compat:28.0.0")
+        api("io.github.microutils:kotlin-logging:1.7.7")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
         api("com.android.support:support-compat:28.0.0")
-
+        api("io.github.microutils:kotlin-logging:1.7.7")
     }
 
 }
+
 
 val packForXcode by tasks.creating(Sync::class) {
     val targetDir = File(buildDir, "xcode-frameworks")
@@ -74,5 +78,7 @@ val packForXcode by tasks.creating(Sync::class) {
         gradlew.setExecutable(true)
     }
 }
+
+
 
 tasks.getByName("build").dependsOn(packForXcode)

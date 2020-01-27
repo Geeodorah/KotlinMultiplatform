@@ -16,9 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageSwitch: UISwitch!
     
     @IBAction func messageSwitch(sender: UISwitch) {
-        print(messageSwitch.isOn)
-        CommonKt.isMessageToggled(messageToggled: messageSwitch.isOn, switchMessage: switchMessageLabel!)
-//        switchMessageLabel.isHidden = !messageSwitch.isOn
+        switchMessageLabel.text = CommonKt.createApplicationScreenMessage()
+        let result = CommonKt.isMessageToggled()
+        messageSwitch.isEnabled = result
+        switchMessageLabel.isHidden = !messageSwitch.isOn
     }
     
     override func viewDidLoad() {
@@ -30,14 +31,14 @@ class ViewController: UIViewController {
         label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         label.font = label.font.withSize(25)
-        label.text = CommonKt.setConditionalText(magic: 1)
-        view.addSubview(label)
+        label.text = CommonKt.commonTesting()
         
         let subLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
         subLabel.center = CGPoint(x: 160, y: 320)
         subLabel.textAlignment = .center
         subLabel.font = label.font.withSize(25)
-        subLabel.text = CommonKt.commonTesting()
+        subLabel.text = CommonKt.setConditionalText(magic: 1)
+        view.addSubview(label)
         view.addSubview(subLabel)
         
 
