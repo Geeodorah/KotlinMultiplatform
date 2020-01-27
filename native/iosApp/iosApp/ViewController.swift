@@ -25,11 +25,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         switchMessageLabel.text = CommonKt.createApplicationScreenMessage()
         switchMessageLabel.isHidden = true
+        CommonKt.registerSwitch(switchObject: messageSwitch!)
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
         label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         label.font = label.font.withSize(25)
-        label.text = CommonKt.testing(magic: 1)
+        label.text = CommonKt.setConditionalText(magic: 1)
         view.addSubview(label)
         
         let subLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 30))

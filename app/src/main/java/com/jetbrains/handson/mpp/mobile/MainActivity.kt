@@ -13,14 +13,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.main_text).text = commonTesting()
-        findViewById<TextView>(R.id.sub_text).text = testing(2)
+        findViewById<TextView>(R.id.sub_text).text = setConditionalText(2)
 
         val messageView = findViewById<TextView>(R.id.message_view)
         messageView.text = createApplicationScreenMessage()
         val messageSwitch = findViewById<Switch>(R.id.message_switch)
+        registerSwitch(messageSwitch)
 
         messageSwitch?.setOnCheckedChangeListener { _, isToggled ->
             isMessageToggled(isToggled, messageView)
         }
+
     }
 }

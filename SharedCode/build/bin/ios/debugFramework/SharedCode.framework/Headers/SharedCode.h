@@ -152,16 +152,21 @@ __attribute__((swift_name("CommonKt")))
 + (NSString *)commonTesting __attribute__((swift_name("commonTesting()")));
 + (NSString *)createApplicationScreenMessage __attribute__((swift_name("createApplicationScreenMessage()")));
 + (void)isMessageToggledMessageToggled:(BOOL)messageToggled switchMessage:(id)switchMessage __attribute__((swift_name("isMessageToggled(messageToggled:switchMessage:)")));
-+ (NSString *)testingMagic:(int32_t)magic __attribute__((swift_name("testing(magic:)")));
++ (void)registerSwitchSwitchObject:(id)switchObject __attribute__((swift_name("registerSwitch(switchObject:)")));
++ (NSString *)setConditionalTextMagic:(int32_t)magic __attribute__((swift_name("setConditionalText(magic:)")));
+@property (class) id switchComponent __attribute__((swift_name("switchComponent")));
+@property (class) int32_t toggleCounter __attribute__((swift_name("toggleCounter")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("ActualKt")))
 @interface SharedCodeActualKt : KotlinBase
++ (void)changeSwitchMessageSwitchMessage:(id)switchMessage __attribute__((swift_name("changeSwitchMessage(switchMessage:)")));
++ (void)disableSwitchSwitchComponent:(id)switchComponent __attribute__((swift_name("disableSwitch(switchComponent:)")));
++ (NSString *)getConditionalTextMagic:(int32_t)magic __attribute__((swift_name("getConditionalText(magic:)")));
 + (void)hideScreenMessageSwitchMessage:(id)switchMessage __attribute__((swift_name("hideScreenMessage(switchMessage:)")));
 + (NSString *)platformName __attribute__((swift_name("platformName()")));
 + (void)showScreenMessageSwitchMessage:(id)switchMessage __attribute__((swift_name("showScreenMessage(switchMessage:)")));
-+ (NSString *)testMagic:(int32_t)magic __attribute__((swift_name("test(magic:)")));
 @end;
 
 #pragma clang diagnostic pop
