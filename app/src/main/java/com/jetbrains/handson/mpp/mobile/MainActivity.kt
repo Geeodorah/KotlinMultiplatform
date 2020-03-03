@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         messageSwitch?.setOnCheckedChangeListener { _, isToggled ->
             messageView.text = createApplicationScreenMessage()
-            var result = isMessageToggled()
+            val result = isMessageToggled()
             messageSwitch.isEnabled = result
             messageView.isVisible = isToggled
             main(!messageSwitch.isEnabled)
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun main(args: Boolean) {
         val showButton = ButtonListener {
-            var button = findViewById<Button>(R.id.button)
+            val button = findViewById<Button>(R.id.button)
                 button.isVisible = args
                 button.text = getButtonText()
                 button.setOnClickListener {

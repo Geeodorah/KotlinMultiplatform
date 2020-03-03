@@ -30,7 +30,7 @@ fun registerSwitch(switchObject: Any){
 
 fun isMessageToggled(): Boolean {
     toggleCounter += 1
-    if (toggleCounter == 5) {
+    if (toggleCounter == 4) {
         message = "Staph fiddling with me toggle lad"
     }
     return (toggleCounter < 5)
