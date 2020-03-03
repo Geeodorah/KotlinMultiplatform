@@ -1,4 +1,0 @@
-#!/bin/bash
-export 'JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home'
-cd '/Users/bennybrugman/Developer/MultiplatformPOC/MPPOC'
-./gradlew $@
